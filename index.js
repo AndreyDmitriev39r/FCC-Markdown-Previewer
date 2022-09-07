@@ -1,22 +1,33 @@
+// constants
+
 const rootElement = document.getElementById('root');
 
-const Editor = () => {
+const initialMarkdown = "for now it will be random stuff";
+
+const Editor = ({defaultValue, changeHandler}) => {
   return (
-    <textarea id="editor" />
+    <textarea id="editor" defaultValue={defaultValue} onChange={changeHandler}/>
   )
 }
 
-const Preview = () => {
+const Preview = ({text}) => {
   return (
-    <div id="preview" />
+    <div id="preview" children={text}/>
   )
 }
 
 const App = () => {
+  const [previewContent, setPreviewContent] = React.useState(initialMarkdown);
+  const handleChange = (e) => {    
+    setPreviewContent(e.target.value);
+  }
   return (
     <>
-    <Editor />
-    <Preview />
+    <Editor 
+      defaultValue={initialMarkdown}
+      changeHandler={handleChange}
+    />
+    <Preview text={previewContent}/>
     </>
   )
 }
