@@ -21,13 +21,17 @@ const Header = () => {
 
 const Editor = ({defaultValue, changeHandler}) => {
   return (
-    <textarea id="editor" className='form-control col-10' defaultValue={defaultValue} onChange={changeHandler}/>
+    <div className='row justify-content-center mb-2'> 
+      <textarea id="editor" className='form-control col-9' defaultValue={defaultValue} onChange={changeHandler}/>
+    </div>  
   )
 }
 
 const Preview = ({text}) => {
   return (
-    <div id="preview" children={text}/>
+    <div className='row justify-content-center mb-1'>
+      <div id="preview" className='col-10' children={text}/>
+    </div>
   )
 }
 
@@ -48,17 +52,19 @@ const Footer = () => {
 
 const App = () => {
   const [previewContent, setPreviewContent] = React.useState(initialMarkdown);
-  const handleChange = (e) => {    
-    setPreviewContent(e.target.value);
+  const handleChange = (event) => {    
+    setPreviewContent(event.target.value);
   }
   return (
     <>
     <Header />
-    <Editor 
-      defaultValue={initialMarkdown}
-      changeHandler={handleChange}
-    />
-    <Preview text={previewContent}/>
+    <main className="container mt-2 mb-2">     
+      <Editor 
+        defaultValue={initialMarkdown}
+        changeHandler={handleChange}
+      />
+      <Preview text={previewContent}/>
+    </main>
     <Footer />
     </>
   )

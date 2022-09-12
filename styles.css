@@ -1,15 +1,5 @@
 /* general styling */
 
-/* TO DO list
-choose fonts
-borders for textarea and div
-also margin, padding stuff
-
-after loding and researching Mrked library
-
-double-check and refactor the above
-*/
-
 :root {
   --main-bg: #eee;
   --content-text: #111;
