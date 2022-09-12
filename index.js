@@ -7,9 +7,15 @@ const initialMarkdown = "for now it will be random stuff";
 
 // child components
 
-const MainHeading = () => {
+const Header = () => {
   return (
-    <h2>Markdown previewer</h2>
+    <header className='container mt-4 mb-3'>
+      <div className='row justify-content-center'>
+        <div className='col-8'>
+          <h2 className='text-center'>Markdown Previewer</h2>
+        </div>        
+      </div>
+    </header>
   )
 }
 
@@ -26,8 +32,15 @@ const Preview = ({text}) => {
 }
 
 const Footer = () => {
+  const date = new Date();
   return (
-    <footer>here goes current year</footer>
+    <footer className='container mt-3 mb-1'>
+      <div className='row justify-content-center'>
+        <div className='col-8'>
+          <p className='text-center'>Markdown Previewer - {date.getFullYear()}</p>
+        </div>        
+      </div>
+    </footer>
   )
 }
 
@@ -40,7 +53,7 @@ const App = () => {
   }
   return (
     <>
-    <MainHeading />
+    <Header />
     <Editor 
       defaultValue={initialMarkdown}
       changeHandler={handleChange}
