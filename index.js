@@ -9,10 +9,10 @@ const initialMarkdown = "for now it will be random stuff";
 
 const Header = () => {
   return (
-    <header className='container mt-4 mb-3'>
+    <header id='header' className='container mt-4 mb-3'>
       <div className='row justify-content-center'>
         <div className='col-8'>
-          <h2 className='text-center'>Markdown Previewer</h2>
+          <h2 className='text-center text-uppercase'>Markdown Previewer</h2>
         </div>        
       </div>
     </header>
@@ -21,7 +21,7 @@ const Header = () => {
 
 const Editor = ({defaultValue, changeHandler}) => {
   return (
-    <textarea id="editor" defaultValue={defaultValue} onChange={changeHandler}/>
+    <textarea id="editor" className='form-control col-10' defaultValue={defaultValue} onChange={changeHandler}/>
   )
 }
 
@@ -34,7 +34,7 @@ const Preview = ({text}) => {
 const Footer = () => {
   const date = new Date();
   return (
-    <footer className='container mt-3 mb-1'>
+    <footer id='footer' className='container mt-3 mb-1'>
       <div className='row justify-content-center'>
         <div className='col-8'>
           <p className='text-center'>Markdown Previewer - {date.getFullYear()}</p>
