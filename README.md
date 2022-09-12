@@ -6,8 +6,6 @@ This is the second certification project for Front End Development libraries sec
 
 ## Technologies used
 
-Precise list is not determined yet.
-
 - HTML
 
 - CSS
@@ -15,6 +13,8 @@ Precise list is not determined yet.
 - JavaScript
 
 - React
+
+- Bootstrap
 
 ## Links
 
