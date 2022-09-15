@@ -2,7 +2,7 @@
 
 const rootElement = document.getElementById('root');
 
-const initialMarkdown = "# This is main heading";
+const initialMarkdown = "# This is main heading\n## This is sub-heading";
 
 
 // child components
@@ -22,7 +22,7 @@ const Header = () => {
 const Editor = ({defaultValue, changeHandler}) => {
   return (
     <div className='row justify-content-center mb-2'> 
-      <textarea id="editor" className='form-control col-9' defaultValue={defaultValue} onChange={changeHandler}/>
+      <textarea id="editor" className='form-control col-9' defaultValue={defaultValue} onInput={changeHandler}/>
     </div>  
   )
 }
