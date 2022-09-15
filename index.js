@@ -2,7 +2,7 @@
 
 const rootElement = document.getElementById('root');
 
-const initialMarkdown = "# This is main heading\n## This is sub-heading";
+const initialMarkdown = "# This is main heading\n## This is sub-heading\n[This is a link](URL)\n`this is inline code`\n```this is code block```\n> this is blockquote\n\n![here goes sr-text](here/goes/the/path 'here goes text for mouseOver')\n**and, finally, this is fat and bolded text**\n* this is list item";
 
 
 // child components
