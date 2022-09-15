@@ -2,7 +2,7 @@
 
 const rootElement = document.getElementById('root');
 
-const initialMarkdown = "for now it will be random stuff";
+const initialMarkdown = "# This is main heading";
 
 
 // child components
@@ -51,9 +51,9 @@ const Footer = () => {
 // main component
 
 const App = () => {
-  const [previewContent, setPreviewContent] = React.useState(initialMarkdown);
+  const [previewContent, setPreviewContent] = React.useState(marked.parse(initialMarkdown));
   const handleChange = (event) => {    
-    setPreviewContent(event.target.value);
+    setPreviewContent(marked.parse(event.target.value));
   }
   return (
     <>
