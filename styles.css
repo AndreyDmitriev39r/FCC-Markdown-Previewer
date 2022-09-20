@@ -23,3 +23,9 @@ h2 {
   font-size: .88rem;
   font-family: monospace, Verdana, sans-serif;
 }
+
+/* styling previewer content */
+
+#preview > * {
+  background: var(--content-bg);
+}

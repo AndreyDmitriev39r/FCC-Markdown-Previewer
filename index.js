@@ -4,6 +4,18 @@ const rootElement = document.getElementById('root');
 
 const initialMarkdown = "# This is main heading\n## This is sub-heading\n[This is a link](URL)\n`this is inline code`\n```\nthis is code block\n```\n> this is blockquote\n\n![here goes sr-text](here/goes/the/path 'here goes text for mouseOver')\n**and, finally, this is fat and bolded text**\n* this is list item";
 
+const markdownDict = [
+  "# This is main heading",
+  "## This is sub-heading",
+  "[This is a link](URL)",
+  "`this is inline code`",
+  "```\nthis is code block\n```",
+  "> this is blockquote\n",
+  "![here goes sr-text](here/goes/the/path 'here goes text for mouseOver')",
+  "** this is fat and bolded text**",
+  "* this is list item"
+]
+
 // child components
 
 const Header = () => {
@@ -21,7 +33,13 @@ const Header = () => {
 const Editor = ({defaultValue, changeHandler}) => {
   return (
     <div className='row justify-content-center mb-2'> 
-      <textarea id="editor" className='form-control col-9' defaultValue={defaultValue} onInput={changeHandler}/>
+      <textarea
+        id="editor"
+        rows = {defaultValue.split('\n').length}
+        className='form-control col-9'
+        defaultValue={defaultValue}
+        onInput={changeHandler}
+      />
     </div>  
   )
 }
@@ -29,7 +47,11 @@ const Editor = ({defaultValue, changeHandler}) => {
 const Preview = ({text}) => {
   return (
     <div className='row justify-content-center mb-1'>
-      <div id="preview" className='col-10' dangerouslySetInnerHTML={{__html: text}}/>
+      <div
+        id="preview"
+        className='col-10'
+        dangerouslySetInnerHTML={{__html: text}}
+      />
     </div>
   )
 }
