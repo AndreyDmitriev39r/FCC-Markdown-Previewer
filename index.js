@@ -77,17 +77,33 @@ const Footer = () => {
 
 // main component
 
-const App = () => {  
-  const [previewContent, setPreviewContent] = React.useState(marked.parse(initialMarkdown));
-  const handleChange = (event) => {    
-    setPreviewContent(marked.parse(event.target.value));
+const App = () => {
+
+  // state  
+
+  const [editorContent, setEditorContent] = React.useState(window.localStorage.getItem('editorContent') || initialMarkdown);
+
+  const [previewContent, setPreviewContent] = React.useState(window.localStorage.getItem('previewContent') || marked.parse(editorContent));
+
+  // effects
+  
+  React.useEffect(() => {
+    window.localStorage.setItem('previewContent', previewContent);
+    window.localStorage.setItem('editorContent', editorContent)
+  }, [editorContent, previewContent])
+
+  // functions
+  const handleChange = (event) => {
+    setEditorContent(event.target.value);
+    setPreviewContent(marked.parse(event.target.value));    
   }
+
   return (
     <>
     <Header />
     <main className="container mt-2 mb-2">     
       <Editor 
-        defaultValue={initialMarkdown}
+        defaultValue={editorContent}
         changeHandler={handleChange}
       />
       <Preview text={previewContent}/>
