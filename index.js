@@ -23,7 +23,7 @@ const Header = () => {
     <header id='header' className='container mt-4 mb-3'>
       <div className='row justify-content-center'>
         <div className='col-8'>
-          <h2 className='text-center text-uppercase'>Markdown Previewer</h2>
+          <h2 id="main-heading" className='text-center text-uppercase'>Markdown Previewer</h2>
         </div>        
       </div>
     </header>
@@ -32,11 +32,14 @@ const Header = () => {
 
 const Editor = ({defaultValue, changeHandler}) => {
   return (
-    <div className='row justify-content-center mb-2'> 
+    <div className='row justify-content-center mb-2'>
+      <div className="col-9 subheading-container border border-dark rounded-lg">
+        <h3 className="text-center subheading mt-2">Type markdown stuff here:</h3>
+      </div>
       <textarea
         id="editor"
         rows = {defaultValue.split('\n').length}
-        className='form-control col-9'
+        className="form-control col-9 border border-dark rounded-lg"
         defaultValue={defaultValue}
         onInput={changeHandler}
       />
@@ -45,11 +48,14 @@ const Editor = ({defaultValue, changeHandler}) => {
 }
 
 const Preview = ({text}) => {
-  return (
+  return (    
     <div className='row justify-content-center mb-1'>
+      <div className="col-10 subheading-container border border-dark rounded-lg">
+        <h3 className="text-center subheading mt-2">...and see how HTML looks here:</h3>
+      </div>
       <div
         id="preview"
-        className='col-10'
+        className="col-10 border border-dark rounded-lg"
         dangerouslySetInnerHTML={{__html: text}}
       />
     </div>

@@ -1,5 +1,6 @@
 :root {
   --main-bg: #eee;
+  --section-heading-bg: #ebf;
   --content-text: #111;
   --content-bg: #eac;
 }
@@ -12,9 +13,19 @@
   background-color: var(--main-bg)
 }
 
-h2 {
+#main-heading {
   font-size: 1.7rem;
   font-weight: 650;
+}
+
+.subheading-container, .subheading-container > * {
+  background-color: var(--section-heading-bg);
+}
+
+.subheading {
+  font-size: 1.31rem;
+  font-weight: 500;
+  padding: 4px;
 }
 
 #preview, #editor {    
@@ -26,6 +37,6 @@ h2 {
 
 /* styling previewer content */
 
-#preview > * {
+/* #preview > * {
   background: var(--content-bg);
-}
+} */
