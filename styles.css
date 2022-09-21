@@ -3,6 +3,7 @@
   --section-heading-bg: #ebf;
   --content-text: #111;
   --content-bg: #eac;
+  --code-txt: #333;
 }
 
 *, *::before, *::after {  
@@ -50,4 +51,12 @@ body {
   margin-left: 0.7rem;
   margin-bottom: 1rem;
   padding: 4px;
+}
+
+pre, code {
+  color: var(--code-txt)
+}
+
+img {
+  width: 65%;
 }

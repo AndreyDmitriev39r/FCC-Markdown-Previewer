@@ -5,13 +5,15 @@ const rootElement = document.getElementById('root');
 const markdownDict = [
   "# This is main heading",
   "## This is sub-heading",
-  "[This is a link](URL)",
-  "`this is inline code`",
-  "```\nthis is code block\n```",
-  "> this is blockquote\n",
-  "![here goes sr-text](here/goes/the/path 'here goes text for mouseOver')",
+  "[This is a link to freeCodeCamp forum](https://forum.freecodecamp.org/)",
+  "`this is inline code: let react='rocks'`",
+  "```\n\\\\this is multi-line code block\nlet stuff = 'someStuff'\nlet someArray = [1, 'and even MORE stuff']\n```",  
+  "> this is just blockquote\n",  
+  "![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg 'hover on it to see this text')",
   "**this is fat and bolded text**",
-  "* this is list item"
+  "*and this \- some italic text*",  
+  "~~and this is crossed out text~~",  
+  "* and finally - this is list item\n"
 ]
 
 // child components
