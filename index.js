@@ -2,8 +2,6 @@
 
 const rootElement = document.getElementById('root');
 
-const initialMarkdown = "# This is main heading\n## This is sub-heading\n[This is a link](URL)\n`this is inline code`\n```\nthis is code block\n```\n> this is blockquote\n\n![here goes sr-text](here/goes/the/path 'here goes text for mouseOver')\n**and, finally, this is fat and bolded text**\n* this is list item";
-
 const markdownDict = [
   "# This is main heading",
   "## This is sub-heading",
@@ -12,7 +10,7 @@ const markdownDict = [
   "```\nthis is code block\n```",
   "> this is blockquote\n",
   "![here goes sr-text](here/goes/the/path 'here goes text for mouseOver')",
-  "** this is fat and bolded text**",
+  "**this is fat and bolded text**",
   "* this is list item"
 ]
 
@@ -81,7 +79,7 @@ const App = () => {
 
   // state  
 
-  const [editorContent, setEditorContent] = React.useState(window.localStorage.getItem('editorContent') || initialMarkdown);
+  const [editorContent, setEditorContent] = React.useState(window.localStorage.getItem('editorContent') || markdownDict.join('\n'));
 
   const [previewContent, setPreviewContent] = React.useState(window.localStorage.getItem('previewContent') || marked.parse(editorContent));
 

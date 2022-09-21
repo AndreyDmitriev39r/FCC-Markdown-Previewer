@@ -40,6 +40,14 @@ body {
 
 /* styling previewer content */
 
+#preview, #preview > * {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
 #preview > *, #preview > * > * {
-  display: block;
+  margin-left: 0.7rem;
+  margin-bottom: 1rem;
+  padding: 4px;
 }
